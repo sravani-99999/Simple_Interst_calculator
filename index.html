@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+<h2>Simple Interest Calculator</h2>
+
+Principal: <input type="number" id="principal" placeholder="Enter principal amount"><br><br>
+Rate: <input type="number" id="rate" placeholder="Enter Rate Of Interst"><br><br>
+Time: <input type="number" id="time" placeholder="Enter number of months"><br><br>
+
+<button onclick="calculateSI()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function calculateSI() {
+    let p = document.getElementById("principal").value;
+    let r = document.getElementById("rate").value;
+    let t = document.getElementById("time").value;
+
+    let si = (p * r * t) / 100;
+    let total = Number(p) + Number(si);
+
+    document.getElementById("result").innerHTML =
+        "Simple Interest = ₹" + si + "<br>Total Amount = ₹" + total;
+
+}
+
+</script>
+
+</body>
+</html>
